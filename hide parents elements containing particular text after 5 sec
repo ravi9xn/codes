@@ -4,7 +4,7 @@ setTimeout(
 	{ 
 	
 		$(document).ready(function () {
-		   $("a:contains('Free Google Reviews widget')").hide();
+		   $("a:contains('particular text here')").hide();
 		});
 	
 	

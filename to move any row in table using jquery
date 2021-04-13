@@ -1,0 +1,1 @@
+ $($(".wf_invoice_metabox tr").eq(3)).insertBefore( $($(".wf_invoice_metabox tr").eq(1)));

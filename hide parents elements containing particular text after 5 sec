@@ -1,0 +1,11 @@
+setTimeout(
+    
+	function()
+	{ 
+	
+		$(document).ready(function () {
+		   $("a:contains('Free Google Reviews widget')").hide();
+		});
+	
+	
+	}, 5000);

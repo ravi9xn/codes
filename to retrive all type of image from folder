@@ -1,0 +1,11 @@
+ $main_r = glob(ABSPATH."wp-content/themes/rvtheme/uploaded-imgs/logo/outlet.*");
+											 
+											// print_r($main_r);
+											 
+											 $main = $main_r[0];
+											 $main_t = filemtime($main); //time
+
+											 $logo_img_ar = explode("/",$main);
+											 
+											 $logo_img_slug = end($logo_img_ar); // image slug .. show add image full address before
+				

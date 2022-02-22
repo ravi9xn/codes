@@ -14,5 +14,14 @@
 										 $main = "./default.png";
 									     $main_t = filemtime($main);
 									}
+									
+									
+									/*
+									
+									 $img_ar = explode("/",$main);
+											 
+								         $img_slug = end($img_ar);
+									
+									*/
 									 
 									

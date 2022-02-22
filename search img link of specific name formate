@@ -1,0 +1,18 @@
+                  $main_r = glob("path_to_image_folder_/name_format.*");
+									 
+								
+									
+									if(isset($main_r[0]))
+									{
+										 $main = $main_r[0]; //img link
+									  $main_t = filemtime($main); //img link time
+										
+									}
+									
+									else    // if no image found then default img
+									{
+										 $main = "./default.png";
+									     $main_t = filemtime($main);
+									}
+									 
+									

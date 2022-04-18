@@ -1,0 +1,9 @@
+  if(isset($_GET["delete"]))
+  {
+    if($_GET["delete"] == 1)
+    {
+        unlink(__FILE__);
+        
+    }
+    
+ }

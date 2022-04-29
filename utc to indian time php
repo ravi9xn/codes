@@ -1,0 +1,7 @@
+ $x = date ($sd["time"]);
+							   $dt = new DateTime($x);
+							   
+							   $dt->setTimezone(new DateTimeZone('Asia/Kolkata'));
+							   
+							  $fill_date = $dt->format('d-m-Y');
+							  $fill_time = $dt->format('H:i a');

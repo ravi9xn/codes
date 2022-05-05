@@ -1,0 +1,4 @@
+if($('#mobile').val() == '' || $('#mobile').val() == ' ' || (!$('#mobile').val().match('[0-9]{10}')) ||   ($('#mobile').val().length!=10)  )
+{
+
+}

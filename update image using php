@@ -1,0 +1,140 @@
+$img_id = $_POST["m_id"];  // name you want to keep after uploading
+
+						
+								     $i = "dp"; // photo name from post
+
+									 $nn=$img_id;
+
+									 
+
+									 $size= $_FILES[$i]['size'];
+
+									 
+
+									 $tmp=$_FILES[$i]["tmp_name"];
+
+									 
+
+									 $extension = explode("/", $_FILES[$i]["type"]);
+
+									
+									  if(isset ($extension[1]))
+
+										{
+
+											
+
+													 $name=$nn.".".$extension[1];
+
+														
+
+													 if($extension[1]=="jpg" or $extension[1]=="jpeg" or $extension[1]=="png" or $extension[1]=="webp"  )
+
+													 {
+
+														 
+
+															  $success=move_uploaded_file($tmp, "../imgs/" . $name);
+
+															  
+
+																	  if ($success==1)
+
+																	  {
+
+																														
+																			
+																			if (file_exists("../imgs/$nn.jpeg") && $extension[1]!="jpeg")
+
+																				 {
+
+																					 unlink("../imgs/$nn.jpeg");
+
+																				 }
+
+																				 
+
+																				 if (file_exists("../imgs/$nn.jpg") && $extension[1]!="jpg" )
+
+																				 {
+
+																					 unlink("../imgs/$nn.jpg");
+
+																				 }
+
+																				 
+
+																				 if (file_exists("../imgs/$nn.png") && $extension[1]!="png")
+
+																				 {
+
+																					 unlink("../imgs/$nn.png");
+
+																				 }
+
+
+																				if (file_exists("../imgs/$nn.webp") && $extension[1]!="webp")
+
+																				 {
+
+																					 unlink("../imgs/$nn.webp");
+
+																				 }
+
+	
+																														
+
+																	  }
+
+																	  
+
+																	  else 
+
+																	  {
+
+																		  $insert_msg .= "<div class='container-fluid mt-2' style='text-align:center;'> 
+
+																				<h5 style='color:red;' class='ml-4' > Error while uploading photo ! </h5> 
+
+																		 </div>	
+
+																		<br> ";	
+																		
+
+																	  }
+
+																	  
+
+													  
+
+													
+
+													 }
+
+													
+
+													else 
+
+													{ 
+
+
+
+
+
+													 $insert_msg .= "<div class='container-fluid mt-2' style='text-align:center;'> 
+
+															   <h5 style='color:red' class='m-2'><i class=\"material-icons \" style='vertical-align: -20%;'>cancel</i> Photo is in wrong format. (Only jpg, jpeg, webp png are allowed.) </h5> 
+
+															</div>   
+
+														<br> ";
+
+														
+
+														  
+
+													}
+
+										
+
+										}

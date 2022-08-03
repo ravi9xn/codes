@@ -1,0 +1,72 @@
+
+	var video_once =0;
+	var data_once =0;
+	
+	
+	      function elementInView(elem){
+				var shown = $(elem).data("shown");
+			  if(shown){
+				return false;
+			  } 
+			  var elTop = $(elem).offset().top;
+			  var elBottom = $(elem).offset().top + $(elem).outerHeight();
+			  var screenBottom = $(window).scrollTop() + $(window).innerHeight();
+			  var screenTop = $(window).scrollTop();
+
+			  if ((screenBottom > elTop) && (screenTop < elBottom)){
+				return true;
+			  } else {
+				return false;
+			  }
+			}
+
+
+			$(window).scroll(function(){
+				
+				if (elementInView($("#break_video_1"))) 
+				{
+					if(video_once == 0)
+					{
+						//alert("hi");
+						
+						$("#break_video_1").get(0).play();
+						
+					}
+					
+					video_once = 1;
+				 }
+				
+				
+				if (elementInView($("#data_div"))) 
+				{
+					if(data_once == 0)
+					{
+						//alert("hi");
+						
+						 $('.data_number').each(function () 
+						 {
+								 $(this).prop('Counter',0).animate({
+									Counter:  $(this).text()
+								}, {
+									duration: 1500,
+									easing: 'swing',
+									step: function (now) {
+										 $(this).text((Math.ceil(now)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+									}
+									});
+									
+									data_once = 1;
+						});
+						
+					  this.destroy();  
+						
+					}
+					
+					data_once = 1;
+				 }
+				
+				
+			  
+			});
+			
+			

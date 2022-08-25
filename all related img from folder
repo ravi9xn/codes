@@ -1,0 +1,16 @@
+ $outlet_directory = "../outlets";
+						   $images = glob($outlet_directory . "/".$outlet["id"].".*");
+						   
+						   
+						   if(isset($images[0]))
+						   {
+								$img1 = $images[0];
+								
+							
+						   }
+						   else
+						   {
+							   $img1 = "../outlets/default.webp";
+						   }
+						   
+						   $img1_time = filemtime($img1); 

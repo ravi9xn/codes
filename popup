@@ -1,0 +1,53 @@
+
+if(!isset($_COOKIE["ad_popup_closed"]))
+{
+	
+
+
+$ad_num = mt_rand(1,4);
+
+echo "
+
+  <div id='popup_ad' class='p-4 popup_ad' style='background-color:rgba(0,0,0,0.7);z-index:5000;position:fixed;top:0;width:100%;height:100%;'>
+  
+     <center>
+	 
+	 <br>
+	 
+	   <div id='close_popup_ad' onclick='close_popup_ad();' class='' style='cursor:pointer;float:right;position:relative;top:10px;background-color:white;width:33px;height:33px;font-size:20px;font-weight:700;text-align:center;border-radius:50%;'> x </div>
+	   
+	   <br>
+	   
+        <a href='/shops/shopreg.php'> <img style='width:400px;max-width:90%;height:auto;' src='/ads/2022-".$ad_num.".png'> </a>
+	  
+	  <br><br>
+	  
+	  <a href='/shops/shopreg.php' class='btn btn-primary'> Register For Free </a> 
+      
+	  
+	</center>
+  
+  </div>
+  
+  
+  <script>
+  
+  
+     function close_popup_ad()
+	 {
+		 
+		 $('#popup_ad').hide();
+		 
+			   const d = new Date();
+			  d.setTime(d.getTime() + (1*24*60*60*1000));
+			  let expires = 'expires='+ d.toUTCString();
+			  document.cookie = 'ad_popup_closed' + '=' + 1 + ';' + expires + ';path=/';
+	 }
+  
+  
+  </script>
+
+  ";
+  
+  
+}
